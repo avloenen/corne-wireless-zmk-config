@@ -16,7 +16,8 @@
             	then-layer = <3>;
         	};
 	};
-
+};
+/ {
 	behaviors {
 		hm: homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
@@ -72,7 +73,6 @@
                           	         &kp LGUI     &trans       &kp BSPC       &lt 2 RET    &lt 4 SPC    &kp TAB
                         >;
                 };
-
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 //  | TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC|
@@ -88,7 +88,6 @@
                     	       &kp RALT &lt 1 BSPC &kp BSPC   &trans    &lt 4 SPC &kp TAB
                         >;
                 };
-
 		adjust_layer {
 // -----------------------------------------------------------------------------------------
 //  | TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
@@ -104,7 +103,6 @@
                                &kp RALT  &trans   &kp BSPC  &trans &lt 4 SPC &kp TAB
 			>;
 		};
-
 		num_layer {
 // -----------------------------------------------------------------------------------------
 //  | TAB | BRID| BRIU|     |     | LCBR|   | RCBR|  7  |  8  |  9  |  *  | BSPC|
@@ -121,5 +119,4 @@
 			>;
 		};
         };
-
 };
