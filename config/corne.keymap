@@ -9,51 +9,107 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+};
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        label = "Base";
+// | TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  -  |
+// | ESC | C_A | A_S | S_D | G_F |  G  |   |  H  | G_J | S_K | A_L | C_; |  '  |
+// |  `  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |  \  |
+//                   | RALT | NAV | BSPC|  | SYM | NUM | TAB |
+
+// NAV = layer tap (lower, BSPC) => &lt 1 BSPC
+// SYM = layer tap (symbols, ENT) => &lt 2 ENT
+// NUM = layer tap (raise, SPC) => &lt 4 SPC
+
+// C_A, C_; = hold tap (CTRL, A/SEMI)
+// A_S, A_L = hold tap (ALT, S/L)
+// S_D, S_K = hold tap (SHIFT, D/K)
+// G_F, G_J = hold tap (GUI, F/J)
+
+
+			label = "Base";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &kp TAB   &kp Q &kp W    &kp E    &kp R      &kp T      &kp Y     &kp U     &kp I     &kp O   &kp P    &kp MINUS
+   &kp ESC   &kp A &kp S    &kp D    &kp F      &kp G      &kp H     &kp J     &kp K     &kp L   &kp SEMI &kp SQT
+   &kp GRAVE &kp Z &kp X    &kp C    &kp V      &kp B      &kp N     &kp M     &kp COMMA &kp DOT &kp FSLH &kp BSLH
+                            &kp RALT &lt 1 BSPC &kp BSPC   &lt 2 RET &lt 4 SPC &kp TAB
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        label = "Lower";
+// | TAB  |     |     | MUTE| VOLD| VOLU|   | BRID| BRIU| HOME| END | DEL | DEL |
+// | ESC  | CTRL| ALT | SHFT| GUI | USB |   | LFT | DWN |  UP | RGT | BSPC| BSPC|
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | CWRD| PGDN| PGUP|     | ENT | ENT |
+//                    | RALT|     | BSPC|   | SYM | NUM | TAB |
+
+			label = "Lower";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp TAB     &none        &none        &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP   &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp DEL  &kp DEL
+   &kp ESC     &kp LCTRL    &kp LALT     &kp LSHFT    &kp LGUI     &out OUT_TOG   &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT &kp BSPC &kp BSPC
+   &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &caps_word   &kp PG_DN    &kp PG_UP &none     &kp RET  &kp RET
+                          	         &kp LGUI     &trans       &kp BSPC       &lt 2 RET    &lt 4 SPC    &kp TAB
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+//  | TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC|
+//  | ESC | LBRC| RBRC| LCBR| RCBR| LPRN|   | RPRN|     |     |     |     | ENT |
+//  | TILD| EXLM|  AT | HASH| DLR | PERC|   | CIRC| AMPR| ASTR| LPRN| RPRN| PIPE|
+//                    | RALT| NAV | BSPC|   |     | NUM | TAB |
+
                         label = "Raise";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp TAB   &kp N1   &kp N2   &kp N3   &kp N4     &kp N5     &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp BSPC
+   &kp ESC   &kp LBKT &kp RBKT &kp LBRC &kp RBRC   &kp LPAR   &kp RPAR  &none     &none     &none    &none    &kp RET
+   &kp TILDE &kp EXCL &kp AT   &kp HASH &kp DLLR   &kp PRCNT  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp PIPE
+                    	       &kp RALT &lt 1 BSPC &kp BSPC   &trans    &lt 4 SPC &kp TAB
                         >;
                 };
+
+		adjust_layer {
+// -----------------------------------------------------------------------------------------
+//  | TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | RESET|
+//  | ESC | CTRL| ALT | SHFT| GUI |     |   |     | GUI | SHFT| ALT | CTRL| EXEC |
+//  |  F1 |  F2 |  F3 |  F4 |  F5 |  F6 |   |  F7 |  F8 |  F9 | F10 | F11 |  F12 |
+//                    | RALT|     | BSPC|   |     | NUM | TAB |  
+
+			label = "Adjust";
+			bindings = <
+    &kp TAB &kp N1    &kp N2   &kp N3    &kp N4   &kp N5    &kp N6 &kp N7    &kp N8    &kp N9   &kp N0    &kp C_RESET
+    &kp ESC &kp LCTRL &kp LALT &kp LSHFT &kp LGUI &none     &none  &kp LGUI  &kp LSHFT &kp LALT &kp LCTRL &kp K_EXEC
+    &kp F1  &kp F2    &kp F3   &kp F4    &kp F5   &kp F6    &kp F7 &kp F8    &kp F9    &kp F10  &kp F11   &kp F12
+                               &kp RALT  &trans   &kp BSPC  &trans &lt 4 SPC &kp TAB
+			>;
+		};
+
+		num_layer {
+// -----------------------------------------------------------------------------------------
+//  | TAB | BRID| BRIU|     |     | LCBR|   | RCBR|  7  |  8  |  9  |  *  | BSPC|
+//  | ESC | CTRL| ALT | SHFT| GUI | LPRN|   | RPRN|  4  |  5  |  6  |  -  |  +  |
+//  |  `  | STOP| PLAY|     |     | LBRC|   | RBRC|  1  |  2  |  3  |  .  |  =  |
+//                    | RALT| NAV | BSPC|   | SYM |     |  0  |
+
+			label = "Num"
+			bindings = <
+    &kp TAB   &kp C_BRI_DN &kp C_BRI_UP &none    &none    &kp LCBR  &kp RCBR &kp N7 &kp N8 &kp N9 &kp ASTRK &kp BSPC
+    &kp ESC   &kp LCTRL    &kp LSHFT    &kp LALT &kp LGUI &kp LPAR  &kp RPAR &kp N4 &kp N5 &kp N6 &kp MINUS &kp PLUS
+    &kp GRAVE &kp C_STOP   &kp C_PP     &none    &none    &kp LBKT  &kp RBKT &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
+                                        &kp RALT &trans   &kp BSPC  &trans   &trans &kp N0
+			>;
+		};
         };
+
 };
