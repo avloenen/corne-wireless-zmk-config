@@ -15,6 +15,7 @@
             	if-layers = <1 2>;
             	then-layer = <3>;
         	};
+	};
 
 	behaviors {
 		hm: homerow_mods {
