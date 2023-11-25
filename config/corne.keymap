@@ -112,7 +112,7 @@
 
 			label = "Num";
 			bindings = <
-    &kp TAB   &kp C_BRI_DN &kp C_BRI_UP &none     &none    &kp LCBR  &kp RCBR &kp N7 &kp N8 &kp N9 &kp ASTRK &kp BSPC
+    &kp TAB   &kp C_BRI_DN &kp C_BRI_UP &none     &none    &kp LBRC  &kp RBRC &kp N7 &kp N8 &kp N9 &kp ASTRK &kp BSPC
     &kp ESC   &kp LCTRL    &kp LALT     &kp LSHFT &kp LGUI &kp LPAR  &kp RPAR &kp N4 &kp N5 &kp N6 &kp MINUS &kp PLUS
     &kp GRAVE &kp C_STOP   &kp C_PP     &none     &none    &kp LBKT  &kp RBKT &kp N1 &kp N2 &kp N3 &kp DOT   &kp EQUAL
                                         &kp RALT  &trans   &kp BSPC  &trans   &trans &kp N0
