@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 / {
     	conditional_layers {
@@ -60,16 +61,16 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |     |     | MUTE| VOLD| VOLU|   | BRID| BRIU| HOME| END | DEL | DEL |
+// | TAB  |EP_TG|     | MUTE| VOLD| VOLU|   | BRID| BRIU| HOME| END | DEL | DEL |
 // | ESC  | CTRL| ALT | SHFT| GUI | USB |   | LFT | DWN |  UP | RGT | BSPC| BSPC|
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | CWRD| PGDN| PGUP|     | ENT | ENT |
 //                    | RALT|     | BSPC|   | SYM | NUM | TAB |
 
 			label = "Lower";
                         bindings = <
-   &kp TAB     &none        &none        &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP   &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp DEL  &kp DEL
-   &kp ESC     &kp LCTRL    &kp LALT     &kp LSHFT    &kp LGUI     &out OUT_TOG   &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT &kp BSPC &kp BSPC
-   &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &caps_word   &kp PG_DN    &kp PG_UP &none     &kp RET  &kp RET
+   &kp TAB     &ext_power EP_TOG &none        &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP   &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp DEL  &kp DEL
+   &kp ESC     &kp LCTRL         &kp LALT     &kp LSHFT    &kp LGUI     &out OUT_TOG   &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT &kp BSPC &kp BSPC
+   &bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &caps_word   &kp PG_DN    &kp PG_UP &none     &kp RET  &kp RET
                           	         &kp LGUI     &trans       &kp BSPC       &lt 2 RET    &lt 4 SPC    &kp TAB
                         >;
                 };
