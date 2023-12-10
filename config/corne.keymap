@@ -23,9 +23,9 @@
 			compatible = "zmk,behavior-hold-tap";
 			label = "HOMEROW_MODS";
 			#binding-cells = <2>;
-			tapping-term-ms = <250>;
-			quick-tap-ms = <50>;
-			require-prior-idle-ms = <50>;
+			tapping-term-ms = <175>;
+			quick-tap-ms = <30>;
+			require-prior-idle-ms = <30>;
 			flavor = "balanced";
 			bindings = <&kp>, <&kp>;
 		};
@@ -51,15 +51,6 @@
 // | ESC | C_A | A_S | S_D | G_F |  G  |   |  H  | G_J | S_K | A_L | C_; |  '  |
 // |  `  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |  \  |
 //                   | RALT | NAV | BSPC|  | SYM | NUM | TAB |
-
-// NAV = layer tap (lower, BSPC) => &lt 1 BSPC
-// SYM = layer tap (symbols, ENT) => &lt 2 ENT
-// NUM = layer tap (raise, SPC) => &lt 4 SPC
-
-// C_A, C_; = hold tap (CTRL, A/SEMI) => &hm LCTRL A
-// A_S, A_L = hold tap (ALT, S/L) => &hm LALT S
-// S_D, S_K = hold tap (SHIFT, D/K) => &hm LSHFT D
-// G_F, G_J = hold tap (GUI, F/J) => &hm LGUI F
 
 
 			label = "Base";
