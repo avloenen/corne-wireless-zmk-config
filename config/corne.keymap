@@ -19,16 +19,30 @@
 	};
 
 	behaviors {
-		hm: homerow_mods {
+		lhm: homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			tapping-term-ms = <200>;
-			quick-tap-ms = <30>;
-			require-prior-idle-ms = <30>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
+			require-prior-idle-ms = <125>;
 			flavor = "balanced";
 			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
+			hold-trigger-on-release;
 		};
 
+		rhm: homerow_mods {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
+			require-prior-idle-ms = <125>;
+			flavor = "balanced";
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
+			hold-trigger-on-release;
+		};
+		     
 		skq: sticky_keys_quick_release {
 			compatible = "zmk,behavior-sticky-key";
 			#binding-cells = <1>;
@@ -52,10 +66,10 @@
 
 
                         bindings = <
-   &kp TAB   &kp Q       &kp W      &kp E       &kp R      &kp T      &kp Y     &kp U      &kp I       &kp O      &kp P          &kp MINUS
-   &kp ESC   &hm LCTRL A &hm LALT S &hm LSHFT D &hm LGUI F &kp G      &kp H     &hm LGUI J &hm LSHFT K &hm LALT L &hm LCTRL SEMI &kp SQT
-   &kp GRAVE &kp Z       &kp X      &kp C       &kp V      &kp B      &kp N     &kp M      &kp COMMA   &kp DOT    &kp FSLH       &kp BSLH
-                                    &kp RALT    &lt 1 BSPC &kp BSPC   &lt 2 RET &lt 4 SPC  &kp TAB
+   &kp TAB   &kp Q        &kp W       &kp E        &kp R       &kp T      &kp Y     &kp U       &kp I        &kp O       &kp P           &kp MINUS
+   &kp ESC   &lhm LCTRL A &lhm LALT S &lhm LSHFT D &lhm LGUI F &kp G      &kp H     &rhm LGUI J &rhm LSHFT K &rhm LALT L &rhm LCTRL SEMI &kp SQT
+   &kp GRAVE &kp Z        &kp X       &kp C        &kp V       &kp B      &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp BSLH
+                                      &kp RALT     &lt 1 BSPC  &kp BSPC   &lt 2 RET &lt 4 SPC   &kp TAB
                         >;
                 };
                 lower_layer {
