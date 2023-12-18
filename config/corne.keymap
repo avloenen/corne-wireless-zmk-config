@@ -19,7 +19,7 @@
 	};
 
 	behaviors {
-		lhm: homerow_mods {
+		lhm: left_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			tapping-term-ms = <280>;
@@ -31,7 +31,7 @@
 			hold-trigger-on-release;
 		};
 
-		rhm: homerow_mods {
+		rhm: right_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			tapping-term-ms = <280>;
