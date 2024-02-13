@@ -11,8 +11,8 @@
 
 #define BBACK LA(LEFT)
 #define BFORW LA(RIGHT)
-#define WINL LS(LG(TAB))
-#define WINR LG(TAB)
+#define WCURR LC(F9)  //WINL LS(LG(TAB))
+#define WALL LC(F10)  //WINR LG(TAB)
 
 / {
     	conditional_layers {
@@ -85,7 +85,7 @@
 //                    | RALT|     | BSPC|   | SYM | NUM | TAB |
 
                         bindings = <
-   &kp TAB     &kp WINL     &kp WINR     &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp DEL  &kp DEL
+   &kp TAB     &kp WCURR    &kp WALL     &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp DEL  &kp DEL
    &kp ESC     &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI    &out OUT_TOG &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT &kp BSPC &kp BSPC
    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp BBACK    &kp BFORW    &caps_word   &kp PG_DN    &kp PG_UP &none     &kp RET  &kp RET
                           	         &trans       &trans       &kp BSPC     &lt 2 RET    &lt 4 SPC    &kp TAB
