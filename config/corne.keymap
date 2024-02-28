@@ -80,15 +80,15 @@
                 };
                 navigation_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |     |     | MUTE| VOLD| VOLU|   | BRID| BRIU| HOME| END | DEL | DEL |
-// | ESC  | CTRL| ALT | SHFT| GUI | USB |   | LFT | DWN |  UP | RGT | BSPC| BSPC|
-// | BTCLR| BT1 | BT2 | BT3 | BACK| FORW|   | CWRD| PGDN| PGUP|     | ENT | ENT |
-//                    | RALT|     | BSPC|   | SYM | NUM | TAB |
+// | TAB |     |     | MUTE| VOLD| VOLU|   | BRID| BRIU| HOME| END | DEL | DEL |
+// | ESC | CTRL| ALT | SHFT| GUI | USB |   | LFT | DWN |  UP | RGT | BSPC| BSPC|
+// | BT1 | BT2 | BT3 |BTNXT| BACK| FORW|   | CWRD| PGDN| PGUP|     | ENT | ENT |
+//                   | RALT|     | BSPC|   | SYM | NUM | TAB |
 
                         bindings = <
-   &kp TAB     &kp WCURR    &kp WALL     &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp VDISP &kp DEL
-   &kp ESC     &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI    &out OUT_TOG &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT &none  &kp BSPC
-   &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp BBACK    &kp BFORW    &caps_word   &kp PG_DN    &kp PG_UP &none     &kp RET   &kp RET
+   &kp TAB      &kp WCURR    &kp WALL     &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP &kp HOME  &kp END   &kp VDISP &kp DEL
+   &kp ESC      &skq LCTRL   &skq LALT    &skq LSHFT &skq LGUI    &out OUT_TOG &kp LEFT     &kp DOWN     &kp UP    &kp RIGHT &none  &kp BSPC
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT &kp BBACK    &kp BFORW    &caps_word   &kp PG_DN    &kp PG_UP &none     &kp RET   &kp RET
                           	         &trans       &trans       &kp BSPC     &lt 2 RET    &lt 4 SPC    &kp TAB
                         >;
                 };
@@ -109,15 +109,15 @@
 		adjust_layer {
 // -----------------------------------------------------------------------------------------
 //  | TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
-//  | ESC | CTRL| ALT | SHFT| GUI |     |   |     | GUI | SHFT| ALT | CTRL| EXEC |
+//  | ESC | CTRL| ALT | SHFT| GUI |BTCLR|   |     | GUI | SHFT| ALT | CTRL| EXEC |
 //  |  F1 |  F2 |  F3 |  F4 |  F5 |  F6 |   |  F7 |  F8 |  F9 | F10 | F11 |  F12 |
 //                    | RALT|     | BSPC|   |     | NUM | TAB |  
 
 			bindings = <
-    &kp TAB &kp N1     &kp N2    &kp N3     &kp N4    &kp N5    &kp N6 &kp N7    &kp N8    &kp N9    &kp N0     &none
-    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &none     &none  &skq LGUI &sk LSHFT &skq LALT &skq LCTRL &kp K_EXEC
-    &kp F1  &kp F2     &kp F3    &kp F4     &kp F5    &kp F6    &kp F7 &kp F8    &kp F9    &kp F10   &kp F11    &kp F12
-                                 &trans     &trans    &kp BSPC  &trans &lt 4 SPC &kp TAB
+    &kp TAB &kp N1     &kp N2    &kp N3     &kp N4    &kp N5     &kp N6 &kp N7    &kp N8    &kp N9    &kp N0     &none
+    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &bt BT_CLR &none  &skq LGUI &sk LSHFT &skq LALT &skq LCTRL &kp K_EXEC
+    &kp F1  &kp F2     &kp F3    &kp F4     &kp F5    &kp F6     &kp F7 &kp F8    &kp F9    &kp F10   &kp F11    &kp F12
+                                 &trans     &trans    &kp BSPC   &trans &lt 4 SPC &kp TAB
 			>;
 		};
 		num_layer {
