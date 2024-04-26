@@ -16,13 +16,13 @@
 //#define VDISP LG(F8)
 
 / {
-    	conditional_layers {
-        	compatible = "zmk,conditional-layers";
-        	tri_layer {
-            		if-layers = <1 2>;
-            		then-layer = <3>;
-        	};
-	};
+//    	conditional_layers {
+//        	compatible = "zmk,conditional-layers";
+//        	tri_layer {
+//            		if-layers = <1 2>;
+//            		then-layer = <3>;
+//        	};
+//	};
 
 	behaviors {
 		lhm: left_homerow_mods {
@@ -134,8 +134,7 @@
                           &trans    &lt 7 SPC &to 0      &to 0        &trans       &trans
 			>;
 		};
-		function_mirror_layer {
-// -----------------------------------------------------------------------------------------
+		function_mirror_layer { // -----------------------------------------------------------------------------------------
 //  |  | F10 | F9 | F8 | F7 |      |   | VOLU  | VOLD | MUTE  | BRIU | BRID | TAB |
 //  |  | F11 | F6 | F5 | F4 |      |   |       | GUI  | SHFT  | ALT  | CTRL | ESC |
 //  |  | F12 | F3 | F2 | F1 | CAPS |   | BTCLR |      | BTOUT | BT3  | BT2  | BT1 |
@@ -156,10 +155,10 @@
 //                    |  .  | SHFT | BSPC|   | ENT |     |  ,  |
 
 			bindings = <
-    &kp TAB &none      &none     &none      &none      &kp LCBR   &kp RCBR &kp 7  &kp 8 &kp 9 &kp 0        &kp MINUS
-    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI  &kp LPRN   &kp RPRN &kp 4  &kp 5 &kp 6 &kp ASTERISK &kp PLUS
-    &none   &none      &none     &none      &none      &kp LBRC   &kp RBRC &kp 1  &kp 2 &kp 3 &kp FSLH     &kp EQUAL
-                                 &kp DOT    &kp LSHFT  &kp BSPC   &kp RET  &trans &kp COMMA    
+    &kp TAB &none      &none     &none      &none     &kp LCBR  &kp RCBR &kp 7  &kp 8 &kp 9 &kp 0        &kp MINUS
+    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &kp LPRN  &kp RPRN &kp 4  &kp 5 &kp 6 &kp ASTERISK &kp PLUS
+    &none   &none      &none     &none      &none     &kp LBRC  &kp RBRC &kp 1  &kp 2 &kp 3 &kp FSLH     &kp EQUAL
+                                 &kp DOT    &kp LSHFT &kp BSPC  &kp RET  &trans &kp COMMA    
 			>;
 		};
 		numpad_mirror_layer {
