@@ -72,7 +72,7 @@
 
 
                         bindings = <
-   &tog 4    &kp Q        &kp W       &kp E        &kp R       &kp T       &kp Y     &kp U       &kp I        &kp O       &kp P           &kp MINUS
+   &tog 4    &kp Q        &kp W       &kp E        &kp R       &kp T       &kp Y     &kp U       &kp I        &kp O       &kp P           &tog 4
    &kp ESC   &lhm LCTRL A &lhm LALT S &lhm LSHFT D &lhm LGUI F &kp G       &kp H     &rhm LGUI J &rhm LSHFT K &rhm LALT L &rhm LCTRL SEMI &kp SQT
    &kp GRAVE &kp Z        &kp X       &kp C        &kp V       &kp B       &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp BSLH
                                       &lt 1 RALT   &kp LSHFT   &lt 2 BSPC  &lt 2 RET &lt 3 SPC   &lt 1 TAB
@@ -86,7 +86,7 @@
 //                   |   | SHFT | MIRR |   | MIRR | SPC |   |
 
                         bindings = <
-   &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &kp HOME   &kp PG_DN &kp PG_UP &kp END   &none &none
+   &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &kp HOME   &kp PG_DN &kp PG_UP &kp END   &none &tog 4
    &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI    &none        &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &none &none
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &kp BBACK    &kp BFORW    &caps_word &kp WCURR &kp WALL  &none     &none &none
                           	          &lt 1 RALT   &kp LSHFT    &lt 2 BSPC   &lt 2 RET  &lt 3 SPC &lt 1 TAB
@@ -100,7 +100,7 @@
 //                           | MIRR | SHFT |  |   |   | SPC | MIRR |
 
                         bindings = <
-   &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &none      &kp F7    &kp F8 &kp F9 &kp F10 &none
+   &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &none      &kp F7    &kp F8 &kp F9 &kp F10 &tog 4
    &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI    &none        &none      &kp F4    &kp F5 &kp F6 &kp F11 &none
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &none        &bt BT_CLR   &caps_word &kp F1    &kp F2 &kp F3 &kp F12 &none
                     	                  &lt 1 RALT   &kp LSHFT    &lt 2 BSPC   &lt 2 RET  &lt 3 SPC &lt 1 TAB
@@ -114,9 +114,9 @@
 //                    |  .  | SHFT | BSPC|   | ENT |     |  ,  |
 
 			bindings = <
-    &tog 4  &none      &none     &none      &none     &kp LBRC &kp RBRC &kp 7  &kp 8 &kp 9 &kp 0        &kp MINUS
-    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &kp LPAR &kp RPAR &kp 4  &kp 5 &kp 6 &kp ASTERISK &kp PLUS
-    &none   &none      &none     &none      &none     &kp LBKT &kp RBKT &kp 1  &kp 2 &kp 3 &kp FSLH     &kp EQUAL
+    &tog 4  &none      &none     &none      &none     &kp LBRC &kp RBRC &kp N7  &kp N8 &kp N9 &kp N0        &kp MINUS
+    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &kp LPAR &kp RPAR &kp N4  &kp N5 &kp N6 &kp ASTERISK &kp PLUS
+    &none   &none      &none     &none      &none     &kp LBKT &kp RBKT &kp N1  &kp N2 &kp N3 &kp FSLH     &kp EQUAL
                                  &kp DOT    &kp LSHFT &kp BSPC &kp RET  &trans &kp COMMA    
 			>;
 		};
@@ -128,7 +128,7 @@
 //         | TAB | SPC | ENT|   | BSPC | SFT | RALT |  
 
 			bindings = <
-    &kp MINUS &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T      &kp R       &kp E        &kp W       &kp Q        &tog 4
+    &tog 4    &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T      &kp R       &kp E        &kp W       &kp Q        &tog 4
     &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H     &kp G      &rhm LGUI F &rhm LSHFT D &rhm LALT S &rhm LCTRL A &kp ESC
     &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N     &kp B      &kp V       &kp C        &kp X       &kp Z        &kp GRAVE
                                           &lt 5 TAB    &lt 7 SPC   &lt 6 RET &lt 6 BSPC &kp LSHFT   &lt 5 RALT
@@ -169,9 +169,9 @@
 //              | , |   | ENT |   | BSPC | SHFT |  .  |
 
 			bindings = <
-    &kp MINUS &kp 0        &kp 9 &kp 8     &kp 7  &kp RBRC &kp LBRC &none     &none      &none     &none      &tog 4
-    &kp PLUS  &kp ASTERISK &kp 6 &kp 5     &kp 4  &kp RPAR &kp LPAR &skq LGUI &skq LSHFT &skq LALT &skq LCTRL &kp ESC
-    &kp EQUAL &kp FSLH     &kp 3 &kp 2     &kp 1  &kp RBKT &kp LBKT &none     &none      &none     &none      &none 
+    &kp MINUS &kp N0        &kp N9 &kp N8    &kp N7  &kp RBRC &kp LBRC &none     &none      &none     &none      &tog 4
+    &kp PLUS  &kp ASTERISK &kp N6 &kp N5     &kp N4  &kp RPAR &kp LPAR &skq LGUI &skq LSHFT &skq LALT &skq LCTRL &kp ESC
+    &kp EQUAL &kp FSLH     &kp N3 &kp N2     &kp N1  &kp RBKT &kp LBKT &none     &none      &none     &none      &none 
                                  &kp COMMA &trans &kp RET  &kp BSPC &kp LSHFT &kp DOT   
 			>;
 		};
