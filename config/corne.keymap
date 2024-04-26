@@ -61,14 +61,14 @@
 		tdtab: tap_dance_tab_mirror {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <200>;
+			tapping-term-ms = <300>;
 			bindings = <&kp TAB>, <&tog 4>;
 		};
 		
  		tdmin: tap_dance_minus_mirror {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <200>;
+			tapping-term-ms = <300>;
 			bindings = <&kp MINUS>, <&tog 4>;
 		};
 	};
