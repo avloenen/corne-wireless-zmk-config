@@ -128,9 +128,9 @@
 //         | TAB | SPC | ENT|   | BSPC | SFT | RALT |  
 
 			bindings = <
-    &kp MINUS &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T      &kp R       &kp E      &kp W       &kp Q        &tog 4
-    &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H     &kp G      &rhm LGUI F &rhm D     &rhm LALT S &rhm LCTRL A &kp ESC
-    &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N     &kp B      &kp V       &kp C      &kp X       &kp Z        &kp GRAVE
+    &kp MINUS &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T      &kp R       &kp E        &kp W       &kp Q        &tog 4
+    &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H     &kp G      &rhm LGUI F &rhm LSHFT D &rhm LALT S &rhm LCTRL A &kp ESC
+    &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N     &kp B      &kp V       &kp C        &kp X       &kp Z        &kp GRAVE
                                           &lt 5 TAB    &lt 7 SPC   &lt 6 RET &lt 6 BSPC &kp LSHFT   &lt 5 RALT
 			>;
 		};
