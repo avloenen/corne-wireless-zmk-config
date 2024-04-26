@@ -63,7 +63,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                base_layer {
+                default_layer {
 // -----------------------------------------------------------------------------------------
 // | TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  -  |
 // | ESC | C_A | A_S | S_D | G_F |  G  |   |  H  | G_J | S_K | A_L | C_; |  '  |
@@ -120,7 +120,7 @@
                                  &kp DOT    &kp LSHFT &kp BSPC &kp RET  &trans &kp COMMA    
 			>;
 		};
-		base_mirror_layer {
+		mirror_layer {
 // -----------------------------------------------------------------------------------------
 //  | - | P | O | I | U | Y |   | T | R | E | W | Q | TAB |
 //  | ' | ; | L | K | J | H |   | G | F | D | S | A | ESC |
