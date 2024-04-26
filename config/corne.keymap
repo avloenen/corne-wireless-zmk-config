@@ -175,5 +175,6 @@
     &kp EQUAL &kp FSLH     &kp 3 &kp 2     &kp 1  &kp RBRC &kp LBRC &none     &none      &none     &none      &none 
                                  &kp COMMA &trans &kp RET  &kp BSPC &kp LSHFT &kp DOT   
 			>;
+		};
         };
 };
