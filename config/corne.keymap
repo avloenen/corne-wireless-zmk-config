@@ -155,10 +155,10 @@
 //                    |  .  | SHFT | BSPC|   | ENT |     |  ,  |
 
 			bindings = <
-    &kp TAB &none      &none     &none      &none     &kp LCBR  &kp RCBR &kp 7  &kp 8 &kp 9 &kp 0        &kp MINUS
-    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &kp LPRN  &kp RPRN &kp 4  &kp 5 &kp 6 &kp ASTERISK &kp PLUS
-    &none   &none      &none     &none      &none     &kp LBRC  &kp RBRC &kp 1  &kp 2 &kp 3 &kp FSLH     &kp EQUAL
-                                 &kp DOT    &kp LSHFT &kp BSPC  &kp RET  &trans &kp COMMA    
+    &kp TAB &none      &none     &none      &none     &kp LBRC &kp RBRC &kp 7  &kp 8 &kp 9 &kp 0        &kp MINUS
+    &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI &kp LPAR &kp RPAR &kp 4  &kp 5 &kp 6 &kp ASTERISK &kp PLUS
+    &none   &none      &none     &none      &none     &kp LBKT &kp RBKT &kp 1  &kp 2 &kp 3 &kp FSLH     &kp EQUAL
+                                 &kp DOT    &kp LSHFT &kp BSPC &kp RET  &trans &kp COMMA    
 			>;
 		};
 		numpad_mirror_layer {
@@ -169,9 +169,9 @@
 //              | , |   | ENT |   | BSPC | SHFT |  .  |
 
 			bindings = <
-    &kp MINUS &kp 0        &kp 9 &kp 8     &kp 7  &kp RCBR &kp LCBR &none     &none      &none     &none      &kp TAB
-    &kp PLUS  &kp ASTERISK &kp 6 &kp 5     &kp 4  &kp RPRN &kp LPRN &skq LGUI &skq LSHFT &skq LALT &skq LCTRL &kp ESC
-    &kp EQUAL &kp FSLH     &kp 3 &kp 2     &kp 1  &kp RBRC &kp LBRC &none     &none      &none     &none      &none 
+    &kp MINUS &kp 0        &kp 9 &kp 8     &kp 7  &kp RBRC &kp LBRC &none     &none      &none     &none      &kp TAB
+    &kp PLUS  &kp ASTERISK &kp 6 &kp 5     &kp 4  &kp RPAR &kp LPAR &skq LGUI &skq LSHFT &skq LALT &skq LCTRL &kp ESC
+    &kp EQUAL &kp FSLH     &kp 3 &kp 2     &kp 1  &kp RBKT &kp LBKT &none     &none      &none     &none      &none 
                                  &kp COMMA &trans &kp RET  &kp BSPC &kp LSHFT &kp DOT   
 			>;
 		};
