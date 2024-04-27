@@ -54,6 +54,30 @@
 			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
 			hold-trigger-on-release;
 		};
+
+		llt: left_layer_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
+			require-prior-idle-ms = <110>;
+			flavor = "balanced";
+			bindings = <&mo>, <&kp>;
+			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
+			hold-trigger-on-release;
+		};
+
+		rlt: right_layer_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
+			require-prior-idle-ms = <110>;
+			flavor = "balanced";
+			bindings = <&mo>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
+			hold-trigger-on-release;
+		};
 		     
 		skq: sticky_keys_quick_release {
 			compatible = "zmk,behavior-sticky-key";
@@ -67,29 +91,15 @@
 		tdtab: tap_dance_tab_mirror {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <300>;
+			tapping-term-ms = <175>;
 			bindings = <&kp TAB>, <&tog 4>;
 		};
 		
  		tdmin: tap_dance_minus_mirror {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <300>;
+			tapping-term-ms = <175>;
 			bindings = <&kp MINUS>, <&tog 4>;
-		};
-
- 		tdbspc: tap_dance_bspc_fun {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			tapping-term-ms = <150>;
-			bindings = <&lt 2 BSPC>, <&kp BSPC>;
-		};
-
- 		tdbspcm: tap_dance_bspc_fun_mirror {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			tapping-term-ms = <150>;
-			bindings = <&lt 6 BSPC>, <&kp BSPC>;
 		};
 
 	};
@@ -106,10 +116,10 @@
 
 
                         bindings = <
-   &tdtab    &kp Q        &kp W       &kp E        &kp R         &kp T   &kp Y     &kp U       &kp I        &kp O       &kp P           &tdmin
-   &kp ESC   &lhm LCTRL A &lhm LALT S &lhm LSHFT D &lhm LGUI F   &kp G   &kp H     &rhm LGUI J &rhm LSHFT K &rhm LALT L &rhm LCTRL SEMI &kp SQT
-   &kp GRAVE &kp Z        &kp X       &kp C        &kp V         &kp B   &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp BSLH
-                                      &lt 1 RALT   &mt LSHFT SPC &tdbspc &lt 2 RET &lt 3 SPC   &lt 1 TAB
+   &tdtab    &kp Q        &kp W       &kp E        &kp R         &kp T       &kp Y     &kp U       &kp I        &kp O       &kp P           &tdmin
+   &kp ESC   &lhm LCTRL A &lhm LALT S &lhm LSHFT D &lhm LGUI F   &kp G       &kp H     &rhm LGUI J &rhm LSHFT K &rhm LALT L &rhm LCTRL SEMI &kp SQT
+   &kp GRAVE &kp Z        &kp X       &kp C        &kp V         &kp B       &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp BSLH
+                                      &lt 1 RALT   &mt LSHFT SPC &llt 2 BSPC &lt 2 RET &lt 3 SPC   &lt 1 TAB
                         >;
                 };
                 navigation_layer {
@@ -123,7 +133,7 @@
    &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &kp HOME   &kp PG_DN &kp PG_UP &kp END   &none &none
    &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI     &none        &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &none &none
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &kp BBACK     &kp BFORW    &caps_word &kp WCURR &kp WALL  &none     &none &none
-                          	          &lt 1 RALT   &mt LSHFT SPC &tdbspc      &lt 2 RET  &lt 3 SPC &lt 1 TAB
+                          	          &lt 1 RALT   &mt LSHFT SPC &llt 2 BSPC  &lt 2 RET  &lt 3 SPC &lt 1 TAB
                         >;
                 };
                 function_layer {
@@ -137,7 +147,7 @@
    &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &none      &kp F7    &kp F8    &kp F9 &kp F10 &none
    &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI     &none        &none      &kp F4    &kp F5    &kp F6 &kp F11 &none
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &none         &bt BT_CLR   &caps_word &kp F1    &kp F2    &kp F3 &kp F12 &none
-                    	                  &lt 1 RALT   &mt LSHFT SPC &tdbspc      &lt 2 RET  &lt 3 SPC &lt 1 TAB
+                    	                  &lt 1 RALT   &mt LSHFT SPC &llt 2 BSPC  &lt 2 RET  &lt 3 SPC &lt 1 TAB
                         >;
                 };
 		numpad_layer {
@@ -162,10 +172,10 @@
 //         | TAB | SPC | ENT|   | BSPC | SFT | RALT |  
 
 			bindings = <
-    &tdmin    &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T    &kp R         &kp E        &kp W       &kp Q        &tdtab
-    &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H     &kp G    &rhm LGUI F   &rhm LSHFT D &rhm LALT S &rhm LCTRL A &kp ESC
-    &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N     &kp B    &kp V         &kp C        &kp X       &kp Z        &kp GRAVE
-                                          &lt 5 TAB    &lt 7 SPC   &lt 6 RET &tdbspcm &mt LSHFT SPC &lt 5 RALT
+    &tdmin    &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T       &kp R         &kp E        &kp W       &kp Q        &tdtab
+    &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H     &kp G       &rhm LGUI F   &rhm LSHFT D &rhm LALT S &rhm LCTRL A &kp ESC
+    &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N     &kp B       &kp V         &kp C        &kp X       &kp Z        &kp GRAVE
+                                          &lt 5 TAB    &lt 7 SPC   &lt 6 RET &rlt 6 BSPC &mt LSHFT SPC &lt 5 RALT
 			>;
 		};
 		navigation_mirror_layer {
@@ -179,7 +189,7 @@
     &none &none    &kp PG_UP &kp UP    &kp PG_DN &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
     &none &kp HOME &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
     &none &none    &none     &kp WALL  &kp WCURR &caps_word &kp BFORW    &kp BBACK     &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-                             &lt 5 TAB &lt 7 SPC &lt 6 RET  &tdbspcm     &mt LSHFT SPC &lt 5 RALT
+                             &lt 5 TAB &lt 7 SPC &lt 6 RET  &rlt 6 BSPC  &mt LSHFT SPC &lt 5 RALT
 			>;
 		};
 		function_mirror_layer { // -----------------------------------------------------------------------------------------
@@ -192,7 +202,7 @@
     &none &kp F10 &kp F9 &kp F8    &kp F7    &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
     &none &kp F11 &kp F6 &kp F5    &kp F4    &none      &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
     &none &kp F12 &kp F3 &kp F2    &kp F1    &caps_word &bt BT_CLR   &none         &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-                         &lt 5 TAB &lt 7 SPC &lt 6 RET  &tdbspcm     &mt LSHFT SPC &lt 5 RALT
+                         &lt 5 TAB &lt 7 SPC &lt 6 RET  &rlt 6 BSPC  &mt LSHFT SPC &lt 5 RALT
 			>;
 		};
 		numpad_mirror_layer {
