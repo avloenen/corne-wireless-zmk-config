@@ -15,6 +15,10 @@
 #define WALL LC(F10)  //WINR LG(TAB)
 //#define VDISP LG(F8)
 
+&mt {
+	tapping-term-ms = <100>;
+};
+        
 
 / {
 //    	conditional_layers {
@@ -25,10 +29,6 @@
 //        	};
 //	};
 //
-	&mt {
-    		tapping-term-ms = <100>;
-	};
-        
 
 	behaviors {
 		lhm: left_homerow_mods {
