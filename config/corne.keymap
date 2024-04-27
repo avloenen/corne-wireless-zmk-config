@@ -154,16 +154,16 @@
 		};
 		navigation_mirror_layer {
 // -----------------------------------------------------------------------------------------
-//  |  |  | END   | PG_UP | PG_DN | HOME |   | VOLU | VOLD | MUTE  | BRIU | BRID |     |
-//  |  |  | RIGHT | UP    | DOWN  | LEFT |   |      | GUI  | SHFT  | ALT  | CTRL | ESC |
-//  |  |  |       | WALL  | WCURR | CAPS |   | FORW | BACK | BTOUT | BT3  | BT2  | BT1 |
-//                    |   | SPC   | BASE |   | BASE | SHFT |   |
+//  |  |      | PG_UP | UP   | PG_DN |      |   | VOLU | VOLD | MUTE  | BRIU | BRID |     |
+//  |  | HOME | LEFT  | DOWN | RIGHT | END  |   |      | GUI  | SHFT  | ALT  | CTRL | ESC |
+//  |  |      |       | WALL | WCURR | CAPS |   | FORW | BACK | BTOUT | BT3  | BT2  | BT1 |
+//                    |      | SPC   | BASE |   | BASE | SHFT |   |
 
 			bindings = <
-    &none &none &kp END   &kp PG_UP &kp PG_DN &kp HOME   &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
-    &none &none &kp RIGHT &kp UP    &kp DOWN  &kp LEFT   &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
-    &none &none &none     &kp WALL  &kp WCURR &caps_word &kp BFORW    &kp BBACK     &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-                          &lt 5 TAB &lt 7 SPC &lt 6 RET  &lt 6 BSPC   &mt LSHFT SPC &lt 5 RALT
+    &none &none    &kp PG_UP &kp UP    &kp PG_DN &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
+    &none &kp HOME &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
+    &none &none    &none     &kp WALL  &kp WCURR &caps_word &kp BFORW    &kp BBACK     &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
+                             &lt 5 TAB &lt 7 SPC &lt 6 RET  &lt 6 BSPC   &mt LSHFT SPC &lt 5 RALT
 			>;
 		};
 		function_mirror_layer { // -----------------------------------------------------------------------------------------
