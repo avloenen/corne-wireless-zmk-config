@@ -16,7 +16,7 @@
 //#define VDISP LG(F8)
 
 &mt {
-	tapping-term-ms = <100>;
+	tapping-term-ms = <150>;
 };
         
 
@@ -59,7 +59,7 @@
 			compatible = "zmk,behavior-sticky-key";
 			#binding-cells = <1>;
 			bindings = <&kp>;
-			release-after-ms = <1500>;
+			release-after-ms = <2000>;
 			quick-release;
 			ignore-modifiers;
 		};
@@ -81,14 +81,14 @@
  		tdbspc: tap_dance_bspc_fun {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <200>;
+			tapping-term-ms = <250>;
 			bindings = <&lt 2 BSPC>, <&kp BSPC>;
 		};
 
  		tdbspcm: tap_dance_bspc_fun_mirror {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <200>;
+			tapping-term-ms = <250>;
 			bindings = <&lt 6 BSPC>, <&kp BSPC>;
 		};
 
