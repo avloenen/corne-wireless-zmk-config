@@ -81,14 +81,14 @@
  		tdbspc: tap_dance_bspc_fun {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <250>;
+			tapping-term-ms = <150>;
 			bindings = <&lt 2 BSPC>, <&kp BSPC>;
 		};
 
  		tdbspcm: tap_dance_bspc_fun_mirror {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <250>;
+			tapping-term-ms = <150>;
 			bindings = <&lt 6 BSPC>, <&kp BSPC>;
 		};
 
