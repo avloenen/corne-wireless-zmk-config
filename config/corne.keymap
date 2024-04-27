@@ -74,12 +74,11 @@
 
 	};
 
-		&mt {
-			tapping_term_ms: <100>;
-		};
-
-
-        keymap {
+	&mt {
+    		tapping-term-ms = <100>;
+	};
+        
+	keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
