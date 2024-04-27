@@ -72,10 +72,11 @@
 			bindings = <&kp MINUS>, <&tog 4>;
 		};
 
+	};
+
 		&mt {
 			tapping_term_ms: <100>;
 		};
-	};
 
 
         keymap {
