@@ -124,10 +124,10 @@
                 };
                 navigation_layer {
 // -----------------------------------------------------------------------------------------
-// |     | BRID | BRIU | MUTE  | VOLD | VOLU |   | HOME | PG_DN | PG_UP | END   |  |  |
-// | ESC | CTRL | ALT  | SHFT  | GUI  |      |   | LEFT | DOWN  |  UP   | RIGHT |  |  |
-// | BT1 | BT2  | BT3  | BTOUT | BACK | FORW |   | CWRD | WCURR | WALL  |       |  |  |
-//                   |   | SHFT | MIRR |   | MIRR | SPC |   |
+// | MIRR | BRID | BRIU | MUTE  | VOLD | VOLU |   | HOME | PG_DN | PG_UP | END   |  | MIRR |
+// | ESC  | CTRL | ALT  | SHFT  | GUI  |      |   | LEFT | DOWN  |  UP   | RIGHT |  |      |
+// | BT1  | BT2  | BT3  | BTOUT | BACK | FORW |   | CWRD | WCURR | WALL  |       |  |      |
+//                      | RALT  | SHFT | BSPC |   | ENT  | SPC   | TAB   |
 
                         bindings = <
    &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &kp HOME   &kp PG_DN  &kp PG_UP &kp END   &none &tog 4
@@ -138,10 +138,10 @@
                 };
                 function_layer {
 // -----------------------------------------------------------------------------------------
-// |     | BRID | BRIU | MUTE  | VOLD | VOLU  |   |      | F7 | F8 | F9 | F10 |  |
-// | ESC | CTRL | ALT  | SHFT  | GUI  |       |   |      | F4 | F5 | F6 | F11 |  |
-// | BT1 | BT2  | BT3  | BTOUT |      | BTCLR |   | CWRD | F1 | F2 | F3 | F12 |  |
-//                           | MIRR | SHFT |  |   |   | SPC | MIRR |
+// |     | BRID | BRIU | MUTE  | VOLD | VOLU  |   |      | F7  | F8  | F9 | F10 |  |
+// | ESC | CTRL | ALT  | SHFT  | GUI  |       |   |      | F4  | F5  | F6 | F11 |  |
+// | BT1 | BT2  | BT3  | BTOUT |      | BTCLR |   | CWRD | F1  | F2  | F3 | F12 |  |
+//                     | RALT  | SHFT | BSPC  |   | ENT  | SPC | TAB |
 
                         bindings = <
    &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &none      &kp F7     &kp F8    &kp F9 &kp F10 &none
@@ -152,13 +152,13 @@
                 };
 		numpad_layer {
 // -----------------------------------------------------------------------------------------
-//  |     |     |     |     |      | LBRC|   | RBRC|  7  |  8  |  9  | 0 | - |
+//  | TOG |     |     |     |      | LBRC|   | RBRC|  7  |  8  |  9  | 0 | - |
 //  | ESC | CTRL| ALT | SHFT| GUI  | LPAR|   | RPAR|  4  |  5  |  6  | * | + |
-//  |  `  | STOP|     |     |      | LBKT|   | RBKT|  1  |  2  |  3  | / | = |
+//  |     |     |     |     |      | LBKT|   | RBKT|  1  |  2  |  3  | / | = |
 //                    |  .  | SHFT | BSPC|   | ENT |     |  ,  |
 
 			bindings = <
-    &none   &none      &none     &none      &none         &kp LBRC &kp RBRC &kp N7 &kp N8   &kp N9 &kp N0       &kp MINUS
+    &tog 3  &none      &none     &none      &none         &kp LBRC &kp RBRC &kp N7 &kp N8   &kp N9 &kp N0       &kp MINUS
     &kp ESC &skq LCTRL &skq LALT &skq LSHFT &skq LGUI     &kp LPAR &kp RPAR &kp N4 &kp N5   &kp N6 &kp ASTERISK &kp PLUS
     &none   &none      &none     &none      &none         &kp LBKT &kp RBKT &kp N1 &kp N2   &kp N3 &kp FSLH     &kp EQUAL
                                  &kp DOT    &mt LSHFT SPC &kp BSPC &kp RET  &trans &kp COMMA    
@@ -166,10 +166,10 @@
 		};
 		mirror_layer {
 // -----------------------------------------------------------------------------------------
-//  | - | P | O | I | U | Y |   | T | R | E | W | Q | TAB |
-//  | ' | ; | L | K | J | H |   | G | F | D | S | A | ESC |
-//  | \ | / | . | , | M | N |   | B | V | C | X | Z |  `  |
-//         | TAB | SPC | ENT|   | BSPC | SFT | RALT |  
+//  | - | P | O | I   | U   | Y   |   | T    | R   | E    | W | Q | TAB |
+//  | ' | ; | L | K   | J   | H   |   | G    | F   | D    | S | A | ESC |
+//  | \ | / | . | ,   | M   | N   |   | B    | V   | C    | X | Z |  `  |
+//              | TAB | SPC | ENT |   | BSPC | SFT | RALT |  
 
 			bindings = <
     &kp MINUS &kp P           &kp O       &kp I        &kp U       &kp Y      &kp T       &kp R         &kp E        &kp W       &kp Q        &kp TAB
@@ -180,10 +180,10 @@
 		};
 		navigation_mirror_layer {
 // -----------------------------------------------------------------------------------------
-//  |  |      | PG_UP | UP   | PG_DN |      |   | VOLU | VOLD | MUTE  | BRIU | BRID |     |
-//  |  | HOME | LEFT  | DOWN | RIGHT | END  |   |      | GUI  | SHFT  | ALT  | CTRL | ESC |
-//  |  |      |       | WALL | WCURR | CAPS |   | FORW | BACK | BTOUT | BT3  | BT2  | BT1 |
-//                    |      | SPC   | BASE |   | BASE | SHFT |   |
+//  | BASE |      | PG_UP | UP   | PG_DN |      |   | VOLU | VOLD | MUTE  | BRIU | BRID | BASE |
+//  |      | HOME | LEFT  | DOWN | RIGHT | END  |   |      | GUI  | SHFT  | ALT  | CTRL | ESC  |
+//  |      |      |       | WALL | WCURR | CAPS |   | FORW | BACK | BTOUT | BT3  | BT2  | BT1  |
+//                        | TAB  | SPC   | ENT  |   | BSPC | SHFT | RALT  |
 
 			bindings = <
     &tog 4 &none    &kp PG_UP &kp UP     &kp PG_DN  &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &tog 4
@@ -193,10 +193,10 @@
 			>;
 		};
 		function_mirror_layer { // -----------------------------------------------------------------------------------------
-//  |  | F10 | F9 | F8 | F7 |      |   | VOLU  | VOLD | MUTE  | BRIU | BRID |     |
-//  |  | F11 | F6 | F5 | F4 |      |   |       | GUI  | SHFT  | ALT  | CTRL | ESC |
-//  |  | F12 | F3 | F2 | F1 | CAPS |   | BTCLR |      | BTOUT | BT3  | BT2  | BT1 |
-//             | BASE | SPC | ENT  |   | BSPC  | SHFT | BASE  |
+//  |  | F10 | F9 | F8  | F7  |      |   | VOLU  | VOLD | MUTE  | BRIU | BRID |     |
+//  |  | F11 | F6 | F5  | F4  |      |   |       | GUI  | SHFT  | ALT  | CTRL | ESC |
+//  |  | F12 | F3 | F2  | F1  | CAPS |   | BTCLR |      | BTOUT | BT3  | BT2  | BT1 |
+//                | TAB | SPC | ENT  |   | BSPC  | SHFT | RALT  |
 
 			bindings = <
     &none &kp F10 &kp F9 &kp F8     &kp F7     &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
@@ -207,13 +207,13 @@
 		};
 		numpad_mirror_layer {
 // -----------------------------------------------------------------------------------------
-//  | - | 0 | 9 | 8 | 7 | RBRC|   | LBRC |     |      |     |      |     |
-//  | + | * | 6 | 5 | 4 | RPAR|   | LPAR | GUI | SHFT | ALT | CTRL | ESC |
-//  | = | / | 3 | 2 | 1 | RBKT|   | LBKT |     |      |     |      |     |
-//              | , |   | ENT |   | BSPC | SHFT |  .  |
+//  | - | 0 | 9 | 8 | 7 | RBRC |   | LBRC |      |      |     |      | NUM |
+//  | + | * | 6 | 5 | 4 | RPAR |   | LPAR | GUI  | SHFT | ALT | CTRL | ESC |
+//  | = | / | 3 | 2 | 1 | RBKT |   | LBKT |      |      |     |      |     |
+//              | , |   | ENT  |   | BSPC | SHFT |  .   |
 
 			bindings = <
-    &kp MINUS &kp N0       &kp N9 &kp N8    &kp N7 &kp RBRC &kp LBRC &none         &none      &none     &none      &none
+    &kp MINUS &kp N0       &kp N9 &kp N8    &kp N7 &kp RBRC &kp LBRC &none         &none      &none     &none      &tog 7
     &kp PLUS  &kp ASTERISK &kp N6 &kp N5    &kp N4 &kp RPAR &kp LPAR &skq LGUI     &skq LSHFT &skq LALT &skq LCTRL &kp ESC
     &kp EQUAL &kp FSLH     &kp N3 &kp N2    &kp N1 &kp RBKT &kp LBKT &none         &none      &none     &none      &none 
                                   &kp COMMA &trans &kp RET  &kp BSPC &mt LSHFT SPC &kp DOT   
