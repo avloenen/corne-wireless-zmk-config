@@ -116,10 +116,10 @@
 
 
                         bindings = <
-   &kp TAB   &kp Q        &kp W       &kp E        &kp R         &kp T       &kp Y     &kp U       &kp I        &kp O       &kp P           &kp MINUS
-   &kp ESC   &lhm LCTRL A &lhm LALT S &lhm LSHFT D &lhm LGUI F   &kp G       &kp H     &rhm LGUI J &rhm LSHFT K &rhm LALT L &rhm LCTRL SEMI &kp SQT
-   &kp GRAVE &kp Z        &kp X       &kp C        &kp V         &kp B       &kp N     &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp BSLH
-                                      &lt 1 RALT   &mt LSHFT SPC &llt 2 BSPC &lt 2 RET &lt 3 SPC   &lt 1 TAB
+   &kp TAB   &kp Q        &kp W       &kp E         &kp R         &kp T       &kp Y      &kp U       &kp I        &kp O       &kp P           &kp MINUS
+   &kp ESC   &lhm LCTRL A &lhm LALT S &lhm LSHFT D  &lhm LGUI F   &kp G       &kp H      &rhm LGUI J &rhm LSHFT K &rhm LALT L &rhm LCTRL SEMI &kp SQT
+   &kp GRAVE &kp Z        &kp X       &kp C         &kp V         &kp B       &kp N      &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp BSLH
+                                      &llt 1 RALT   &mt LSHFT SPC &llt 2 BSPC &rlt 2 RET &rlt 3 SPC  &rlt 1 TAB
                         >;
                 };
                 navigation_layer {
@@ -130,10 +130,10 @@
 //                   |   | SHFT | MIRR |   | MIRR | SPC |   |
 
                         bindings = <
-   &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &kp HOME   &kp PG_DN &kp PG_UP &kp END   &none &tog 4
-   &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI     &none        &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &none &none
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &kp BBACK     &kp BFORW    &caps_word &kp WCURR &kp WALL  &none     &none &none
-                          	          &lt 1 RALT   &mt LSHFT SPC &llt 2 BSPC  &lt 2 RET  &lt 3 SPC &lt 1 TAB
+   &tog 4       &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &kp HOME   &kp PG_DN  &kp PG_UP &kp END   &none &tog 4
+   &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI     &none        &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT &none &none
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &kp BBACK     &kp BFORW    &caps_word &kp WCURR  &kp WALL  &none     &none &none
+                          	          &llt 1 RALT  &mt LSHFT SPC &llt 2 BSPC  &rlt 2 RET &rlt 3 SPC &rlt 1 TAB
                         >;
                 };
                 function_layer {
@@ -144,10 +144,10 @@
 //                           | MIRR | SHFT |  |   |   | SPC | MIRR |
 
                         bindings = <
-   &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &none      &kp F7    &kp F8    &kp F9 &kp F10 &none
-   &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI     &none        &none      &kp F4    &kp F5    &kp F6 &kp F11 &none
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &none         &bt BT_CLR   &caps_word &kp F1    &kp F2    &kp F3 &kp F12 &none
-                    	                  &lt 1 RALT   &mt LSHFT SPC &llt 2 BSPC  &lt 2 RET  &lt 3 SPC &lt 1 TAB
+   &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP &none      &kp F7     &kp F8    &kp F9 &kp F10 &none
+   &trans       &skq LCTRL   &skq LALT    &skq LSHFT   &skq LGUI     &none        &none      &kp F4     &kp F5    &kp F6 &kp F11 &none
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &out OUT_TOG &none         &bt BT_CLR   &caps_word &kp F1     &kp F2    &kp F3 &kp F12 &none
+                    	                  &llt 1 RALT  &mt LSHFT SPC &llt 2 BSPC  &rlt 2 RET &rlt 3 SPC &rlt 1 TAB
                         >;
                 };
 		numpad_layer {
@@ -172,10 +172,10 @@
 //         | TAB | SPC | ENT|   | BSPC | SFT | RALT |  
 
 			bindings = <
-    &kp MINUS &kp P           &kp O       &kp I        &kp U       &kp Y     &kp T       &kp R         &kp E        &kp W       &kp Q        &kp TAB
-    &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H     &kp G       &rhm LGUI F   &rhm LSHFT D &rhm LALT S &rhm LCTRL A &kp ESC
-    &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N     &kp B       &kp V         &kp C        &kp X       &kp Z        &kp GRAVE
-                                          &lt 5 TAB    &lt 7 SPC   &lt 6 RET &rlt 6 BSPC &mt LSHFT SPC &lt 5 RALT
+    &kp MINUS &kp P           &kp O       &kp I        &kp U       &kp Y      &kp T       &kp R         &kp E        &kp W       &kp Q        &kp TAB
+    &kp SQT   &lhm LCTRL SEMI &lhm LALT L &lhm LSHFT K &lhm LGUI J &kp H      &kp G       &rhm LGUI F   &rhm LSHFT D &rhm LALT S &rhm LCTRL A &kp ESC
+    &kp BSLH  &kp FSLH        &kp DOT     &kp COMMA    &kp M       &kp N      &kp B       &kp V         &kp C        &kp X       &kp Z        &kp GRAVE
+                                          &llt 5 TAB   &llt 7 SPC  &llt 6 RET &rlt 6 BSPC &mt LSHFT SPC &rlt 5 RALT
 			>;
 		};
 		navigation_mirror_layer {
@@ -186,10 +186,10 @@
 //                    |      | SPC   | BASE |   | BASE | SHFT |   |
 
 			bindings = <
-    &tog 4 &none    &kp PG_UP &kp UP    &kp PG_DN &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &tog 4
-    &none  &kp HOME &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
-    &none  &none    &none     &kp WALL  &kp WCURR &caps_word &kp BFORW    &kp BBACK     &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-                              &lt 5 TAB &lt 7 SPC &lt 6 RET  &rlt 6 BSPC  &mt LSHFT SPC &lt 5 RALT
+    &tog 4 &none    &kp PG_UP &kp UP     &kp PG_DN  &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &tog 4
+    &none  &kp HOME &kp LEFT  &kp DOWN   &kp RIGHT  &kp END    &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
+    &none  &none    &none     &kp WALL   &kp WCURR  &caps_word &kp BFORW    &kp BBACK     &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
+                              &llt 5 TAB &llt 7 SPC &lt 6 RET  &rlt 6 BSPC  &mt LSHFT SPC &rlt 5 RALT
 			>;
 		};
 		function_mirror_layer { // -----------------------------------------------------------------------------------------
@@ -199,10 +199,10 @@
 //             | BASE | SPC | ENT  |   | BSPC  | SHFT | BASE  |
 
 			bindings = <
-    &none &kp F10 &kp F9 &kp F8    &kp F7    &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
-    &none &kp F11 &kp F6 &kp F5    &kp F4    &none      &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
-    &none &kp F12 &kp F3 &kp F2    &kp F1    &caps_word &bt BT_CLR   &none         &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-                         &lt 5 TAB &lt 7 SPC &lt 6 RET  &rlt 6 BSPC  &mt LSHFT SPC &lt 5 RALT
+    &none &kp F10 &kp F9 &kp F8     &kp F7     &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE   &kp C_BRI_UP &kp C_BRI_DN &none
+    &none &kp F11 &kp F6 &kp F5     &kp F4     &none      &none        &skq LGUI     &skq LSHFT   &skq LALT    &skq LCTRL   &trans
+    &none &kp F12 &kp F3 &kp F2     &kp F1     &caps_word &bt BT_CLR   &none         &out OUT_TOG &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
+                         &llt 5 TAB &llt 7 SPC &llt 6 RET &rlt 6 BSPC  &mt LSHFT SPC &rlt 5 RALT
 			>;
 		};
 		numpad_mirror_layer {
