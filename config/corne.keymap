@@ -145,13 +145,13 @@
 // |     | BRID | BRIU | MUTE | VOLD | VOLU |   |      | F7  | F8  | F9 | F10 |  |
 // | ESC | CTRL | ALT  | SHFT | GUI  |      |   |      | F4  | F5  | F6 | F11 |  |
 // | BT1 | BT2  | BT3  |      |      |      |   | CWRD | F1  | F2  | F3 | F12 |  |
-//                     | RALT | SHFT | BSPC |   | ENT  | SPC | TAB |
+//                     | RALT | SHFT | BSPC |   | ENT  | NUM | TAB |
 
                         bindings = <
-   &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP &none      &kp F7     &kp F8    &kp F9 &kp F10 &none
-   &trans       &skq LCTRL   &skq LALT    &skq LSHFT  &skq LGUI     &none        &none      &kp F4     &kp F5    &kp F6 &kp F11 &none
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none       &none         &none        &caps_word &kp F1     &kp F2    &kp F3 &kp F12 &none
-                    	                  &llt 1 RALT &mt LSHFT SPC &llt 2 BSPC  &rlt 2 RET &rlt 3 SPC &rlt 1 TAB
+   &none        &kp C_BRI_DN &kp C_BRI_UP &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP &none      &kp F7 &kp F8    &kp F9 &kp F10 &none
+   &trans       &skq LCTRL   &skq LALT    &skq LSHFT  &skq LGUI     &none        &none      &kp F4 &kp F5    &kp F6 &kp F11 &none
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none       &none         &none        &caps_word &kp F1 &kp F2    &kp F3 &kp F12 &none
+                    	                  &llt 1 RALT &mt LSHFT SPC &llt 2 BSPC  &rlt 2 RET &tog 3 &rlt 1 TAB
                         >;
                 };
 		numpad_layer {
@@ -200,13 +200,13 @@
 //  |  | F10 | F9 | F8  | F7  |      |   | VOLU | VOLD | MUTE | BRIU | BRID |     |
 //  |  | F11 | F6 | F5  | F4  |      |   |      | GUI  | SHFT | ALT  | CTRL | ESC |
 //  |  | F12 | F3 | F2  | F1  | CAPS |   |      |      |      | BT3  | BT2  | BT1 |
-//                | TAB | SPC | ENT  |   | BSPC | SHFT | RALT |
+//                | TAB | NUM | ENT  |   | BSPC | SHFT | RALT |
 
 			bindings = <
-    &none &kp F10 &kp F9 &kp F8     &kp F7     &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE  &kp C_BRI_UP &kp C_BRI_DN &none
-    &none &kp F11 &kp F6 &kp F5     &kp F4     &none      &none        &skq LGUI     &skq LSHFT  &skq LALT    &skq LCTRL   &trans
-    &none &kp F12 &kp F3 &kp F2     &kp F1     &caps_word &none        &none         &none       &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
-                         &llt 5 TAB &llt 7 SPC &llt 6 RET &rlt 6 BSPC  &mt LSHFT SPC &rlt 5 RALT
+    &none &kp F10 &kp F9 &kp F8     &kp F7 &none      &kp C_VOL_UP &kp C_VOL_DN  &kp C_MUTE  &kp C_BRI_UP &kp C_BRI_DN &none
+    &none &kp F11 &kp F6 &kp F5     &kp F4 &none      &none        &skq LGUI     &skq LSHFT  &skq LALT    &skq LCTRL   &trans
+    &none &kp F12 &kp F3 &kp F2     &kp F1 &caps_word &none        &none         &none       &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0
+                         &llt 5 TAB &tog 7 &llt 6 RET &rlt 6 BSPC  &mt LSHFT SPC &rlt 5 RALT
 			>;
 		};
 		numpad_mirror_layer {
@@ -225,16 +225,16 @@
 		};
 		adjust_layer {
 // -----------------------------------------------------------------------------------------
-//  |  |  |  |  |  |       |  |       |  |  |  |  |  |
-//  |  |  |  |  |  | BTCLR |  | BTCLR |  |  |  |  |  |
-//  |  |  |  |  |  | BTOUT |  | BTOUT |  |  |  |  |  |
-//           |  |  |       |  |       |  |  |
+//  | BT D0 | BT D1 | BT D2 |  |  | RESET |  | RESET |  |  | BT D2 | BT D1 | BT D0 |
+//  | S_OFF |       |       |  |  | BTCLR |  | BTCLR |  |  |       |       | S_OFF |
+//  |       |       |       |  |  | BTOUT |  | BTOUT |  |  |       |       |       |
+//                          |  |  |       |  |       |  |  |
 
 			bindings = <
-    &none &none &none  &none  &none  &none        &none        &none  &none &none &none &none
-    &none &none &none  &none  &none  &bt BT_CLR   &bt BT_CLR   &none  &none &none &none &none
-    &none &none &none  &none  &none  &out OUT_TOG &out OUT_TOG &none  &none &none &none &none 
-                       &trans &trans &trans       &trans       &trans &trans
+    &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &none  &none  &sys_reset   &sys_reset   &none  &none  &bt BT_DISC 2 &btBT_DISC 1 &bt BT_DISC 0
+    &soft_off     &none         &none         &none  &none  &bt BT_CLR   &bt BT_CLR   &none  &none  &none         &none        &soft_off
+    &none         &none         &none         &none  &none  &out OUT_TOG &out OUT_TOG &none  &none  &none         &none        &none 
+                                              &trans &trans &trans       &trans       &trans &trans
 			>;
 		};
         };
